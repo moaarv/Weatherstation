@@ -1,0 +1,328 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.1.169/W32 for ARM                  05/Dec/2018  10:47:50
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Exe\projekt.out
+#    Map file     =  
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\List\projekt.map
+#    Command line =  
+#        -f C:\Users\moa_a\AppData\Local\Temp\EW4AF.tmp
+#        (C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj\cstartup.o
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj\exceptions.o
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj\main.o
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj\startup_sam3x.o
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj\system_sam3x.o
+#        --no_out_extension -o
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Exe\projekt.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\List\projekt.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.2\arm\CONFIG\generic_cortex.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0M, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xf4
+  .intvec                             0x0   0xf4  <Block>
+    .intvec          const            0x0   0xf4  startup_sam3x.o [1]
+                                   - 0xf4   0xf4
+
+"P1":                                      0x7bc
+  .text              ro code         0xf4  0x564  main.o [1]
+  .text              ro code        0x658   0x24  S32ToFlt.o [3]
+  .text              ro code        0x67c   0xa0  system_sam3x.o [1]
+  .text              ro code        0x71c   0x38  packbits_init_single.o [4]
+  .text              ro code        0x754   0x30  startup_sam3x.o [1]
+  .text              ro code        0x784    0xc  cstartup.o [1]
+  .text              ro code        0x790   0x1e  cmain.o [4]
+  .text              ro code        0x7ae    0x2  exceptions.o [1]
+  .text              ro code        0x7b0   0x28  data_init.o [4]
+  .text              ro code        0x7d8    0x4  exit.o [2]
+  .text              ro code        0x7dc    0xa  cexit.o [4]
+  .text              ro code        0x7e8   0x14  exit.o [5]
+  .text              ro code        0x7fc   0x30  iarttio.o [5]
+  .text              ro code        0x82c    0xc  XShttio.o [2]
+  .iar.init_table    const          0x838   0x10  - Linker created -
+  .rodata            const          0x848    0x0  packbits_init_single.o [4]
+  Initializer bytes  const          0x848   0x68  <for P2-1>
+                                  - 0x8b0  0x7bc
+
+"P2", part 1 of 2:                          0x84
+  P2-1                        0x2000'0000   0x84  <Init block>
+    .data            inited   0x2000'0000    0x4  main.o [1]
+    .data            inited   0x2000'0004    0x4  main.o [1]
+    .data            inited   0x2000'0008    0x4  main.o [1]
+    .data            inited   0x2000'000c    0x4  main.o [1]
+    .data            inited   0x2000'0010    0x4  main.o [1]
+    .data            inited   0x2000'0014    0x4  main.o [1]
+    .data            inited   0x2000'0018    0x4  main.o [1]
+    .data            inited   0x2000'001c    0x4  main.o [1]
+    .data            inited   0x2000'0020    0x4  main.o [1]
+    .data            inited   0x2000'0024    0x4  main.o [1]
+    .data            inited   0x2000'0028    0x4  main.o [1]
+    .data            inited   0x2000'002c    0x4  main.o [1]
+    .data            inited   0x2000'0030    0x4  main.o [1]
+    .data            inited   0x2000'0034    0x4  main.o [1]
+    .data            inited   0x2000'0038    0x4  main.o [1]
+    .data            inited   0x2000'003c    0x4  main.o [1]
+    .data            inited   0x2000'0040    0x4  main.o [1]
+    .data            inited   0x2000'0044    0xc  main.o [1]
+    .data            inited   0x2000'0050   0x10  main.o [1]
+    .data            inited   0x2000'0060    0x4  system_sam3x.o [1]
+    .data            inited   0x2000'0064    0x8  XShttio.o [2]
+    .bss             inited   0x2000'006c    0x4  main.o [1]
+    .bss             inited   0x2000'0070    0x4  main.o [1]
+    .bss             inited   0x2000'0074    0x4  main.o [1]
+    .bss             inited   0x2000'0078    0x4  main.o [1]
+    .bss             inited   0x2000'007c    0x4  main.o [1]
+    .bss             inited   0x2000'0080    0x4  main.o [1]
+                            - 0x2000'0084   0x84
+
+"P2", part 2 of 2:                         0x400
+  CSTACK                      0x2000'0088  0x400  <Block>
+    CSTACK           uninit   0x2000'0088  0x400  <Block tail>
+                            - 0x2000'0488  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x8b0     0x7'ffff  0x7'f750
+  0x2000'0084  0x2000'0087       0x4
+  0x2000'0488  0x2000'ffff    0xfb78
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x68 (78% of destination):
+                0x848  0x68
+    1 destination range, total size 0x84:
+          0x2000'0000  0x84
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj: [1]
+    cstartup.o                   12
+    exceptions.o                  2
+    main.o                    1 380       94      120
+    startup_sam3x.o              48      244
+    system_sam3x.o              160        3        4
+    -------------------------------------------------
+    Total:                    1 602      341      124
+
+dl7M_tln.a: [2]
+    XShttio.o                    12        7        8
+    exit.o                        4
+    -------------------------------------------------
+    Total:                       16        7        8
+
+m7M_tl.a: [3]
+    S32ToFlt.o                   36
+    -------------------------------------------------
+    Total:                       36
+
+rt7M_tl.a: [4]
+    cexit.o                      10
+    cmain.o                      30
+    data_init.o                  40
+    packbits_init_single.o       56
+    -------------------------------------------------
+    Total:                      136
+
+shb_l.a: [5]
+    exit.o                       20
+    iarttio.o                    48
+    -------------------------------------------------
+    Total:                       68
+
+    Gaps                          2
+    Linker created                        16    1 024
+-----------------------------------------------------
+    Grand Total:              1 860      364    1 156
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base         0x838         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x848         --   Gb  - Linker created -
+.intvec$$Base                   0x0         --   Gb  - Linker created -
+.intvec$$Limit                 0xf4         --   Gb  - Linker created -
+?main                         0x791        Code  Gb  cmain.o [4]
+ADC_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+BusFault_Handler              0x7af   0x2  Code  Wk  exceptions.o [1]
+CAN0_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+CAN1_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+CSTACK$$Base            0x2000'0088         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0488         --   Gb  - Linker created -
+DACC_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+DMAC_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+DebugMon_Handler              0x7af   0x2  Code  Wk  exceptions.o [1]
+Delay                         0x21d   0xe  Code  Gb  main.o [1]
+Dummy_Handler                 0x7af   0x2  Code  Gb  exceptions.o [1]
+EFC0_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+EFC1_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+HSMCI_Handler                 0x7af   0x2  Code  Wk  exceptions.o [1]
+HardFault_Handler             0x7af   0x2  Code  Wk  exceptions.o [1]
+Init_ADC                      0x4d3  0x30  Code  Gb  main.o [1]
+Init_Display                  0x377  0xaa  Code  Gb  main.o [1]
+Init_Servo                    0x505  0x3c  Code  Gb  main.o [1]
+Init_Timer                    0x453  0x46  Code  Gb  main.o [1]
+MemManage_Handler             0x7af   0x2  Code  Wk  exceptions.o [1]
+NMI_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+NVIC_ClearPendingIRQ          0x10b  0x16  Code  Lc  main.o [1]
+NVIC_EnableIRQ                 0xf5  0x16  Code  Lc  main.o [1]
+NVIC_SetPriority              0x121  0x28  Code  Lc  main.o [1]
+PIOA_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+PIOA_ODR                0x2000'003c   0x4  Data  Gb  main.o [1]
+PIOA_PER                0x2000'0038   0x4  Data  Gb  main.o [1]
+PIOA_PUER               0x2000'0040   0x4  Data  Gb  main.o [1]
+PIOB_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+PIOB_OER                0x2000'0030   0x4  Data  Gb  main.o [1]
+PIOB_PER                0x2000'002c   0x4  Data  Gb  main.o [1]
+PIOB_SODR               0x2000'0034   0x4  Data  Gb  main.o [1]
+PIOC_CODR               0x2000'0028   0x4  Data  Gb  main.o [1]
+PIOC_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+PIOC_ODR                0x2000'0018   0x4  Data  Gb  main.o [1]
+PIOC_OER                0x2000'0014   0x4  Data  Gb  main.o [1]
+PIOC_PDSR               0x2000'0024   0x4  Data  Gb  main.o [1]
+PIOC_PER                0x2000'0010   0x4  Data  Gb  main.o [1]
+PIOC_PUDR               0x2000'001c   0x4  Data  Gb  main.o [1]
+PIOC_SODR               0x2000'0020   0x4  Data  Gb  main.o [1]
+PIOD_CODR               0x2000'000c   0x4  Data  Gb  main.o [1]
+PIOD_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+PIOD_OER                0x2000'0004   0x4  Data  Gb  main.o [1]
+PIOD_PER                0x2000'0000   0x4  Data  Gb  main.o [1]
+PIOD_SODR               0x2000'0008   0x4  Data  Gb  main.o [1]
+PMC_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+PWM_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+PendSV_Handler                0x7af   0x2  Code  Wk  exceptions.o [1]
+RSTC_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+RTC_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+RTT_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+Read_Status_Display           0x22b  0x6e  Code  Gb  main.o [1]
+Region$$Table$$Base           0x838         --   Gb  - Linker created -
+Region$$Table$$Limit          0x848         --   Gb  - Linker created -
+Reset_Handler                 0x77d   0x8  Code  Gb  startup_sam3x.o [1]
+SPI0_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+SSC_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+SUPC_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+SVC_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+SysTick_Config                0x149  0x36  Code  Lc  main.o [1]
+SysTick_Handler               0x4cb   0x8  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'0060   0x4  Data  Gb  system_sam3x.o [1]
+SystemInit                    0x67d  0x70  Code  Gb  system_sam3x.o [1]
+TC0_Handler                   0x499  0x32  Code  Gb  main.o [1]
+TC1_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+TC2_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+TC3_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+TC4_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+TC5_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+TC_RA                   0x2000'0078   0x4  Data  Gb  main.o [1]
+TC_RB                   0x2000'007c   0x4  Data  Gb  main.o [1]
+TRNG_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+TWI0_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+TWI1_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+UART_Handler                  0x7af   0x2  Code  Wk  exceptions.o [1]
+UOTGHS_Handler                0x7af   0x2  Code  Wk  exceptions.o [1]
+USART0_Handler                0x7af   0x2  Code  Wk  exceptions.o [1]
+USART1_Handler                0x7af   0x2  Code  Wk  exceptions.o [1]
+USART2_Handler                0x7af   0x2  Code  Wk  exceptions.o [1]
+UsageFault_Handler            0x7af   0x2  Code  Wk  exceptions.o [1]
+Value                   0x2000'006c   0x4  Data  Gb  main.o [1]
+WDT_Handler                   0x7af   0x2  Code  Wk  exceptions.o [1]
+Write_Command_2_Display
+                              0x299  0x70  Code  Gb  main.o [1]
+Write_Data_2_Display          0x309  0x6e  Code  Gb  main.o [1]
+__aeabi_i2f                   0x659        Code  Gb  S32ToFlt.o [3]
+__cmain                       0x791        Code  Gb  cmain.o [4]
+__exit                        0x7e9  0x14  Code  Gb  exit.o [5]
+__iar_close_ttio              0x7fd  0x2e  Code  Gb  iarttio.o [5]
+__iar_data_init3              0x7b1  0x28  Code  Gb  data_init.o [4]
+__iar_lookup_ttioh            0x82d   0x4  Code  Gb  XShttio.o [2]
+__iar_packbits_init_single3
+                              0x71d  0x38  Code  Gb  packbits_init_single.o [4]
+__iar_program_start           0x785        Code  Gb  cstartup.o [1]
+__iar_ttio_handles      0x2000'0064   0x8  Data  Lc  XShttio.o [2]
+__low_level_init              0x755  0x20  Code  Gb  startup_sam3x.o [1]
+__vector_table                  0x0  0xf4  Data  Gb  startup_sam3x.o [1]
+_call_main                    0x79d        Code  Gb  cmain.o [4]
+_exit                         0x7dd        Code  Gb  cexit.o [4]
+_main                         0x7ab        Code  Gb  cmain.o [4]
+colArr                  0x2000'0044   0xc  Data  Gb  main.o [1]
+exit                          0x7d9   0x4  Code  Gb  exit.o [2]
+keypad                        0x17f  0x9c  Code  Gb  main.o [1]
+main                          0x541  0x50  Code  Gb  main.o [1]
+print_Display                 0x421  0x32  Code  Gb  main.o [1]
+rowArr                  0x2000'0050  0x10  Data  Gb  main.o [1]
+statusDisp              0x2000'0074   0x4  Data  Gb  main.o [1]
+temp                    0x2000'0070   0x4  Data  Gb  main.o [1]
+timeL1                  0x2000'0080   0x4  Data  Gb  main.o [1]
+
+
+[1] = C:\Users\moa_a\OneDrive\Dokument\DST1Labs\HardWare\Weatherstation\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  1 860 bytes of readonly  code memory
+    364 bytes of readonly  data memory
+  1 156 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
